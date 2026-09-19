@@ -17,7 +17,7 @@ export function Brand() {
       <span className="brand-mark" aria-hidden="true"><span>م</span></span>
       <span className="leading-tight">
         <strong className="block text-base font-bold text-foreground">مسور المتطورة</strong>
-        <span className="block text-[10px] text-muted-foreground">حلول رقمية متقدمة</span>
+        <span className="block text-[10px] text-primary">حلول رقمية متقدمة</span>
       </span>
     </Link>
   );

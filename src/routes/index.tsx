@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, ArrowUpLeft, Bot, CheckCircle2, Code2, Cpu, Gavel, Palette, Route as RouteIcon, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowUpLeft, Bot, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { projects, services } from "@/components/site/content";
 import { SiteLayout } from "@/components/site/site-shell";
+import { projectImages } from "@/components/site/project-images";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -15,13 +16,11 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-function TechVisual() {
-  return <div className="tech-visual" aria-label="منظومة حلول مسور التقنية">
-    <div className="orbit orbit-one"><span /></div><div className="orbit orbit-two"><span /></div>
-    <div className="visual-core"><span className="visual-kicker">MESWAR</span><Cpu className="size-12" /><strong>تقنية تصنع<br />المستقبل</strong></div>
-    <div className="float-node node-one"><Bot /><span>ذكاء اصطناعي</span></div>
-    <div className="float-node node-two"><Code2 /><span>أنظمة متطورة</span></div>
-    <div className="float-node node-three"><Sparkles /><span>تجربة استثنائية</span></div>
+function HeroVisual() {
+  return <div className="hero-showcase" aria-label="مشروع صوتي من مسور المتطورة">
+    <div className="hero-image-frame"><img src={projectImages["صوتي"]} alt="واجهة مشروع صوتي للوكيل الصوتي الذكي" /></div>
+    <div className="hero-project-label"><span>مشروع مميز</span><strong>صوتي</strong><small>وكيل صوتي عربي بالذكاء الاصطناعي</small></div>
+    <div className="hero-mini-stat"><strong>24/7</strong><span>خدمة مستمرة</span></div>
   </div>;
 }
 
@@ -40,7 +39,7 @@ function HomePage() {
           </div>
           <div className="hero-trust"><div><strong>حلول مخصصة</strong><span>لا قوالب جاهزة</span></div><div><strong>تقنيات حديثة</strong><span>لبناء أسرع وأذكى</span></div><div><strong>دعم مستمر</strong><span>بعد إطلاق مشروعك</span></div></div>
         </div>
-        <TechVisual />
+        <HeroVisual />
       </div>
     </section>
 
@@ -58,7 +57,7 @@ function HomePage() {
     <section className="section-block">
       <div className="site-container flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><span className="eyebrow">منتجات صنعتها مسور</span><h2 className="section-title">مشاريع تتحول من<br /><span>فكرة إلى أثر.</span></h2></div><Button asChild variant="glass"><Link to="/projects">كل المشاريع <ArrowUpLeft /></Link></Button></div>
       <div className="site-container mt-12 grid gap-5 lg:grid-cols-2">
-        {projects.slice(0, 4).map(({ title, category, description, icon: Icon, number, accent }) => <article key={title} className={`project-card project-${accent}`}><div className="flex items-center justify-between"><span className="project-number">{number}</span><span className="project-icon"><Icon /></span></div><div className="mt-20"><span className="project-category">{category}</span><h3>{title}</h3><p>{description}</p></div><Link to="/projects" className="project-link" aria-label={`تفاصيل مشروع ${title}`}><ArrowUpLeft /></Link></article>)}
+        {projects.slice(0, 4).map(({ title, category, description, icon: Icon, number, accent }) => <article key={title} className={`project-card project-${accent} ${projectImages[title] ? "project-card-image" : ""}`}>{projectImages[title] && <img src={projectImages[title]} alt={`واجهة مشروع ${title}`} />}<div className="project-overlay" /><div className="relative z-10 flex items-center justify-between"><span className="project-number">{number}</span><span className="project-icon"><Icon /></span></div><div className="project-card-copy"><span className="project-category">{category}</span><h3>{title}</h3><p>{description}</p></div><Link to="/projects" className="project-link" aria-label={`تفاصيل مشروع ${title}`}><ArrowUpLeft /></Link></article>)}
       </div>
     </section>
 
