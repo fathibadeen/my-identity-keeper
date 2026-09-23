@@ -19,19 +19,17 @@ export const Route = createFileRoute("/")({
 function HeroVisual() {
   return <div className="hero-showcase" aria-label="مشروع صوتي من مسور المتطورة">
     <div className="hero-image-frame"><img src={projectImages["صوتي"]} alt="واجهة مشروع صوتي للوكيل الصوتي الذكي" /></div>
-    <div className="hero-project-label"><span>مشروع مميز</span><strong>صوتي</strong><small>وكيل صوتي عربي بالذكاء الاصطناعي</small></div>
-    <div className="hero-mini-stat"><strong>24/7</strong><span>خدمة مستمرة</span></div>
+    <div className="hero-project-label"><span>من مشاريع مسور</span><strong>صوتي</strong><small>أتمتة ذكية لخدمة العملاء</small></div>
   </div>;
 }
 
 function HomePage() {
   return <SiteLayout>
     <section className="hero-section">
-      <div className="hero-grid-bg" aria-hidden="true" />
       <div className="site-container grid items-center gap-14 py-16 lg:min-h-[720px] lg:grid-cols-[1.05fr_.95fr] lg:py-20">
         <div className="relative z-10 animate-rise">
           <span className="eyebrow"><span className="status-dot" /> شريكك التقني نحو المستقبل</span>
-          <h1 className="hero-title">نبني حلولًا رقمية<br /><span>تصنع الفرق</span></h1>
+          <h1 className="hero-title">مسور المتطورة<br /><span>حلول رقمية تصنع الفرق</span></h1>
           <p className="hero-copy">في مسور المتطورة نحول الأفكار إلى مواقع وأنظمة وحلول تقنية متطورة تساعد الشركات على النمو، وتحسين عملياتها، وتقديم تجربة رقمية أفضل لعملائها.</p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Button asChild size="lg" variant="premium"><Link to="/projects">استكشف مشاريعنا <ArrowLeft /></Link></Button>
