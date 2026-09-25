@@ -2,6 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { ArrowLeft, Menu, Phone, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
+import { brandAssets } from "@/components/site/brand-assets";
 
 const navItems = [
   { to: "/", label: "الرئيسية" },
@@ -13,12 +14,8 @@ const navItems = [
 
 export function Brand() {
   return (
-    <Link to="/" className="group flex items-center gap-3" aria-label="مسور المتطورة - الرئيسية">
-      <span className="brand-mark" aria-hidden="true"><span>م</span></span>
-      <span className="leading-tight">
-        <strong className="block text-base font-bold text-foreground">مسور المتطورة</strong>
-        <span className="block text-[10px] text-primary">حلول رقمية متقدمة</span>
-      </span>
+    <Link to="/" className="brand-link" aria-label="مسور المتطورة - الرئيسية">
+      <img src={brandAssets.logo} alt="مسور" />
     </Link>
   );
 }
@@ -61,9 +58,9 @@ export function SiteHeader() {
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border bg-surface-deep">
+    <footer className="site-footer border-t border-border bg-surface-deep">
       <div className="site-container grid gap-10 py-12 md:grid-cols-[1.3fr_1fr_1fr]">
-        <div><Brand /><p className="mt-5 max-w-sm text-sm leading-7 text-muted-foreground">نصنع تجارب رقمية وأنظمة ذكية تساعد المنشآت على التطور والعمل بكفاءة.</p></div>
+        <div><Brand /><p className="mt-5 max-w-sm text-sm leading-7 text-muted-foreground">منظومة تقنية سعودية تحول احتياج الأعمال إلى منتجات رقمية وحلول ذكاء اصطناعي تصنع أثرًا قابلًا للقياس.</p></div>
         <div>
           <h2 className="text-sm font-bold text-foreground">روابط سريعة</h2>
           <div className="mt-4 grid gap-3 text-sm text-muted-foreground">

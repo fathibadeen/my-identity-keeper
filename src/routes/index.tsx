@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { projects, services } from "@/components/site/content";
 import { SiteLayout } from "@/components/site/site-shell";
 import { projectImages } from "@/components/site/project-images";
+import { brandAssets, partners } from "@/components/site/brand-assets";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -17,9 +18,8 @@ export const Route = createFileRoute("/")({
 });
 
 function HeroVisual() {
-  return <div className="hero-showcase" aria-label="مشروع صوتي من مسور المتطورة">
-    <div className="hero-image-frame"><img src={projectImages["صوتي"]} alt="واجهة مشروع صوتي للوكيل الصوتي الذكي" /></div>
-    <div className="hero-project-label"><span>من مشاريع مسور</span><strong>صوتي</strong><small>أتمتة ذكية لخدمة العملاء</small></div>
+  return <div className="hero-showcase" aria-label="مسور المتطورة">
+    <div className="hero-brand-stage"><span className="hero-orbit" /><img src={brandAssets.logo} alt="شعار مسور" /><div className="hero-signal"><span>نكتشف</span><span>نبني</span><span>نُطلق</span></div></div>
   </div>;
 }
 
@@ -28,23 +28,30 @@ function HomePage() {
     <section className="hero-section">
       <div className="site-container grid items-center gap-14 py-16 lg:min-h-[720px] lg:grid-cols-[1.05fr_.95fr] lg:py-20">
         <div className="relative z-10 animate-rise">
-          <span className="eyebrow"><span className="status-dot" /> شريكك التقني نحو المستقبل</span>
-          <h1 className="hero-title">مسور المتطورة<br /><span>حلول رقمية تصنع الفرق</span></h1>
-          <p className="hero-copy">في مسور المتطورة نحول الأفكار إلى مواقع وأنظمة وحلول تقنية متطورة تساعد الشركات على النمو، وتحسين عملياتها، وتقديم تجربة رقمية أفضل لعملائها.</p>
+          <span className="eyebrow"><span className="status-dot" /> من الفكرة إلى منتج يعمل وينمو</span>
+          <h1 className="hero-title">مسور المتطورة<br /><span>نبني التحوّل، لا الواجهة فقط.</span></h1>
+          <p className="hero-copy">نفهم تحدي عملك، نكتشف الفرصة، ثم نصمم ونطور منتجًا رقميًا أو حل ذكاء اصطناعي يرفع الكفاءة ويمنح عملاءك تجربة تستحق العودة.</p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Button asChild size="lg" variant="premium"><Link to="/projects">استكشف مشاريعنا <ArrowLeft /></Link></Button>
             <Button asChild size="lg" variant="glass"><Link to="/contact">تواصل معنا</Link></Button>
           </div>
-          <div className="hero-trust"><div><strong>حلول مخصصة</strong><span>لا قوالب جاهزة</span></div><div><strong>تقنيات حديثة</strong><span>لبناء أسرع وأذكى</span></div><div><strong>دعم مستمر</strong><span>بعد إطلاق مشروعك</span></div></div>
+          <div className="hero-trust"><div><strong>نفهم</strong><span>العمل قبل التقنية</span></div><div><strong>نبني</strong><span>منتجًا قابلًا للنمو</span></div><div><strong>نطوّر</strong><span>الأثر بعد الإطلاق</span></div></div>
         </div>
         <HeroVisual />
       </div>
     </section>
 
+    <section className="partners-section section-block">
+      <div className="site-container grid gap-10 lg:grid-cols-[.75fr_1.25fr] lg:items-end"><div><span className="eyebrow">شركاء مسور</span><h2 className="section-title">منظومة واحدة.<br /><span>خبرات تكمل بعضها.</span></h2></div><p className="section-lead">نجمع الاستشارة الذكية، الحلول الصوتية، والتنفيذ التقني تحت رؤية واحدة؛ لتنتقل شركتك من سؤال «ماذا نحتاج؟» إلى حل يعمل فعلًا.</p></div>
+      <div className="site-container partners-grid mt-12">
+        {partners.map((partner, index) => <article className={`partner-card partner-card-${index + 1}`} key={partner.name}><div className="partner-visual"><img src={partner.image} alt={`شعار ${partner.name}`} /></div><div className="partner-content"><span>0{index + 1} / منظومة مسور</span><h3>{partner.name}</h3><p>{partner.description}</p>{partner.href.startsWith("http") ? <a className="partner-link" href={partner.href} target="_blank" rel="noreferrer">{partner.action}<ArrowUpLeft /></a> : <Link className="partner-link" to="/about">{partner.action}<ArrowLeft /></Link>}</div></article>)}
+      </div>
+    </section>
+
     <section className="section-block border-y border-border bg-surface-deep">
       <div className="site-container grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
-        <div><span className="eyebrow">ما الذي نقدمه</span><h2 className="section-title">تقنية تخدم هدفك،<br /><span>لا تعقّده.</span></h2></div>
-        <p className="section-lead">نبدأ بفهم التحدي، ثم نبني الحل الأنسب بأدوات حديثة وتجربة استخدام واضحة، من الفكرة الأولى حتى الإطلاق والتطوير المستمر.</p>
+        <div><span className="eyebrow">كيف نصنع الأثر</span><h2 className="section-title">من تحدٍ واضح،<br /><span>إلى ميزة تنافسية.</span></h2></div>
+        <p className="section-lead">لا نبدأ بالأداة. نبدأ بالنتيجة التي تريدها، ثم نختار التقنية ونبني المسار الذي يوصلك إليها بأقل تعقيد وأعلى قيمة.</p>
       </div>
       <div className="site-container mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
         {services.slice(0, 6).map(({ icon: Icon, title, description }, index) => <article className="service-tile" key={title}><span className="service-index">0{index + 1}</span><Icon className="service-icon" /><h3>{title}</h3><p>{description}</p></article>)}
