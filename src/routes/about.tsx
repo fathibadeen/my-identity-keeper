@@ -3,10 +3,14 @@ import { ArrowLeft, CheckCircle2, Eye, HeartHandshake, Target } from "lucide-rea
 import { Button } from "@/components/ui/button";
 import { PageIntro, SiteLayout } from "@/components/site/site-shell";
 
-export const Route = createFileRoute("/about")({ head: () => ({ meta: [
-  { title: "عن مسور المتطورة | شريكك التقني" }, { name: "description", content: "تعرف على مسور المتطورة ورؤيتنا في بناء حلول رقمية موثوقة تخدم الأعمال السعودية." },
-  { property: "og:title", content: "عن مسور المتطورة" }, { property: "og:description", content: "شركة تقنية سعودية تحول التحديات إلى فرص وحلول رقمية عملية." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
-]}), component: AboutPage });
+export const Route = createFileRoute("/about")({ head: () => ({
+  meta: [
+    { title: "عن مسور المتطورة | شريك تقني للأعمال السعودية" }, { name: "description", content: "تعرف على مسور المتطورة، شركة تقنية سعودية تبني مواقع ومنصات وأنظمة وحلول ذكاء اصطناعي بمنهج واضح وشراكة مستمرة." },
+    { property: "og:title", content: "عن مسور المتطورة | شريكك التقني" }, { property: "og:description", content: "نحوّل تحديات الأعمال إلى منتجات رقمية موثوقة وفرص نمو قابلة للقياس." }, { property: "og:type", content: "website" }, { property: "og:url", content: "https://meswar.com/about" }, { name: "twitter:card", content: "summary_large_image" }, { name: "twitter:title", content: "عن مسور المتطورة | شريكك التقني" }, { name: "twitter:description", content: "شركة تقنية سعودية تجمع فهم الأعمال بالتنفيذ الرقمي المتقن." },
+  ],
+  links: [{ rel: "canonical", href: "https://meswar.com/about" }],
+  scripts: [{ type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "AboutPage", name: "عن مسور المتطورة", url: "https://meswar.com/about", inLanguage: "ar", description: "شركة تقنية سعودية تبني حلولًا رقمية موثوقة تخدم الأعمال.", mainEntity: { "@id": "https://meswar.com/#organization" } }) }],
+}), component: AboutPage });
 
 function AboutPage() { return <SiteLayout><PageIntro eyebrow="عن مسور المتطورة" title="نصنع التقنية بقصد، ونبنيها لتدوم." description="شركة تقنية سعودية تجمع بين الفهم العميق للأعمال والتنفيذ الرقمي المتقن لتحويل التحديات إلى فرص نمو." />
 <section className="section-block"><div className="site-container grid gap-10 lg:grid-cols-2"><div><span className="eyebrow">قصتنا</span><h2 className="section-title">من الفكرة إلى<br /><span>قيمة حقيقية.</span></h2></div><div className="space-y-5 text-base leading-8 text-muted-foreground"><p>في مسور المتطورة، نؤمن أن التقنية الناجحة تبدأ من فهم الإنسان والعمل. لذلك لا نبني منتجًا لمجرد البناء، بل نصمم حلًا يخدم هدفًا واضحًا ويصنع تجربة أفضل.</p><p>نعمل مع المنشآت ورواد الأعمال على تطوير المواقع والمنصات والأنظمة والحلول الذكية، بمنهج يجمع الوضوح والمرونة والجودة.</p></div></div></section>

@@ -7,13 +7,30 @@ import { projectImages } from "@/components/site/project-images";
 import { brandAssets, partners } from "@/components/site/brand-assets";
 
 export const Route = createFileRoute("/")({
-  head: () => ({ meta: [
-    { title: "مسور المتطورة | حلول رقمية تصنع الفرق" },
-    { name: "description", content: "نطور المواقع والأنظمة وحلول الذكاء الاصطناعي التي تساعد الشركات على النمو وتحسين عملياتها." },
-    { property: "og:title", content: "مسور المتطورة | حلول رقمية تصنع الفرق" },
-    { property: "og:description", content: "شركة تقنية سعودية تبني مواقع وأنظمة وحلول ذكاء اصطناعي متطورة." },
-    { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
-  ]}),
+  head: () => ({
+    meta: [
+      { title: "مسور المتطورة | تطوير المواقع والأنظمة وحلول الذكاء الاصطناعي" },
+      { name: "description", content: "شركة تقنية سعودية تطور المواقع والمنصات والأنظمة وحلول الذكاء الاصطناعي لرفع كفاءة الأعمال وصناعة منتجات رقمية قابلة للنمو." },
+      { property: "og:title", content: "مسور المتطورة | حلول رقمية وذكاء اصطناعي للأعمال" },
+      { property: "og:description", content: "نحوّل احتياجات الأعمال إلى مواقع وأنظمة وحلول ذكاء اصطناعي عملية تصنع أثرًا قابلًا للقياس." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://meswar.com/" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "مسور المتطورة | حلول رقمية وذكاء اصطناعي للأعمال" },
+      { name: "twitter:description", content: "نحوّل احتياجات الأعمال إلى مواقع وأنظمة وحلول ذكاء اصطناعي عملية." },
+    ],
+    links: [{ rel: "canonical", href: "https://meswar.com/" }],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          { "@type": "Organization", "@id": "https://meswar.com/#organization", name: "مسور المتطورة", url: "https://meswar.com/", telephone: "+966530044027", logo: "https://meswar.com/favicon.png", description: "شركة تقنية سعودية متخصصة في تطوير المواقع والأنظمة وحلول الذكاء الاصطناعي.", areaServed: { "@type": "Country", name: "المملكة العربية السعودية" } },
+          { "@type": "WebSite", "@id": "https://meswar.com/#website", url: "https://meswar.com/", name: "مسور المتطورة", inLanguage: "ar", publisher: { "@id": "https://meswar.com/#organization" } },
+        ],
+      }),
+    }],
+  }),
   component: HomePage,
 });
 

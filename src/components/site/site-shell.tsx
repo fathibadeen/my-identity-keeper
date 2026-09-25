@@ -79,7 +79,7 @@ export function SiteFooter() {
 }
 
 export function SiteLayout({ children }: { children: ReactNode }) {
-  return <div dir="rtl" className="min-h-screen bg-background text-foreground"><SiteHeader /><main>{children}</main><SiteFooter /></div>;
+  return <div dir="rtl" className="min-h-screen bg-background text-foreground"><a href="#main-content" className="skip-link">انتقل إلى المحتوى الرئيسي</a><SiteHeader /><main id="main-content" tabIndex={-1}>{children}</main><SiteFooter /></div>;
 }
 
 export function PageIntro({ eyebrow, title, description }: { eyebrow: string; title: string; description: string }) {
