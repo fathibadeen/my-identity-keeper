@@ -5,6 +5,7 @@ import { projects, services } from "@/components/site/content";
 import { SiteLayout } from "@/components/site/site-shell";
 import { projectImages } from "@/components/site/project-images";
 import { brandAssets, partners } from "@/components/site/brand-assets";
+import { Marquee, SplitWords } from "@/components/site/motion";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -46,7 +47,7 @@ function HomePage() {
       <div className="site-container grid items-center gap-14 py-16 lg:min-h-[720px] lg:grid-cols-[1.05fr_.95fr] lg:py-20">
         <div className="relative z-10 animate-rise">
           <span className="eyebrow"><span className="status-dot" /> من الفكرة إلى منتج يعمل وينمو</span>
-          <h1 className="hero-title">مسور المتطورة<br /><span>نبني التحوّل، لا الواجهة فقط.</span></h1>
+          <h1 className="hero-title">مسور المتطورة<br /><span><SplitWords text="نبني التحوّل، لا الواجهة فقط." /></span></h1>
           <p className="hero-copy">نفهم تحدي عملك، نكتشف الفرصة، ثم نصمم ونطور منتجًا رقميًا أو حل ذكاء اصطناعي يرفع الكفاءة ويمنح عملاءك تجربة تستحق العودة.</p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Button asChild size="lg" variant="premium"><Link to="/projects">استكشف مشاريعنا <ArrowLeft /></Link></Button>
@@ -57,6 +58,8 @@ function HomePage() {
         <HeroVisual />
       </div>
     </section>
+
+    <Marquee items={["مواقع","أنظمة","ذكاء اصطناعي","أتمتة","صوتي","استشارتك"]} />
 
     <section className="partners-section section-block">
       <div className="site-container grid gap-10 lg:grid-cols-[.75fr_1.25fr] lg:items-end"><div><span className="eyebrow">شركاء مسور</span><h2 className="section-title">منظومة واحدة.<br /><span>خبرات تكمل بعضها.</span></h2></div><p className="section-lead">نجمع الاستشارة الذكية، الحلول الصوتية، والتنفيذ التقني تحت رؤية واحدة؛ لتنتقل شركتك من سؤال «ماذا نحتاج؟» إلى حل يعمل فعلًا.</p></div>
