@@ -3,6 +3,7 @@ import { ArrowLeft, Menu, Phone, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { brandAssets } from "@/components/site/brand-assets";
+import { MotionEffects } from "@/components/site/motion";
 
 const navItems = [
   { to: "/", label: "الرئيسية" },
@@ -79,7 +80,7 @@ export function SiteFooter() {
 }
 
 export function SiteLayout({ children }: { children: ReactNode }) {
-  return <div dir="rtl" className="min-h-screen bg-background text-foreground"><a href="#main-content" className="skip-link">انتقل إلى المحتوى الرئيسي</a><SiteHeader /><main id="main-content" tabIndex={-1}>{children}</main><SiteFooter /></div>;
+  return <div dir="rtl" className="min-h-screen bg-background text-foreground"><a href="#main-content" className="skip-link">انتقل إلى المحتوى الرئيسي</a><MotionEffects /><SiteHeader /><main id="main-content" tabIndex={-1}>{children}</main><SiteFooter /></div>;
 }
 
 export function PageIntro({ eyebrow, title, description }: { eyebrow: string; title: string; description: string }) {
