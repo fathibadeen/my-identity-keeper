@@ -219,3 +219,4 @@
 main{animation:page-in .6s cubic-bezier(.2,.7,.2,1)}
 @keyframes page-in{from{opacity:0;transform:translateY(12px)}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.word{opacity:1;transform:none}.hero-trust>div::after{transform:scaleX(1)}.cursor-glow{display:none}}
+body{overflow-x:clip}
