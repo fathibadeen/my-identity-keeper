@@ -1,6 +1,8 @@
-import { Bot, Code2, Gavel, Globe2, Layers3, Palette, Route, Sparkles, Workflow, Wrench } from "lucide-react";
+import { Headphones, MessageCircle, Bot, Code2, Gavel, Globe2, Layers3, Palette, Route, Sparkles, Workflow, Wrench } from "lucide-react";
 
 export const services = [
+  { icon: Headphones, title: "الكول سنتر الذكي", description: "وكيل صوتي ذكي يرد على مكالمات عملائك بلهجة سعودية طبيعية 24/7، بلا انتظار، ويحوّل للموظف عند الحاجة." },
+  { icon: MessageCircle, title: "أتمتة واتساب للأعمال", description: "رد فوري على واتساب للحجوزات والطلبات والاستفسارات، مربوط بنظامك ويعمل على مدار الساعة." },
   { icon: Globe2, title: "تصميم وتطوير المواقع", description: "مواقع سريعة ومتجاوبة تعكس هويتك وتحوّل الزيارات إلى فرص حقيقية." },
   { icon: Layers3, title: "الأنظمة والمنصات", description: "أنظمة رقمية مصممة حول عملياتك لتختصر الوقت وتمنحك رؤية أوضح." },
   { icon: Bot, title: "حلول الذكاء الاصطناعي", description: "وكلاء أذكياء وأتمتة عملية تساعد فريقك على خدمة العملاء والعمل بكفاءة." },
