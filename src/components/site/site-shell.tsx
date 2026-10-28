@@ -8,6 +8,7 @@ import { MotionEffects } from "@/components/site/motion";
 const navItems = [
   { to: "/", label: "الرئيسية" },
   { to: "/about", label: "عن مسور" },
+  { to: "/solutions", label: "حلولنا" },
   { to: "/services", label: "خدماتنا" },
   { to: "/projects", label: "مشاريعنا" },
   { to: "/contact", label: "تواصل معنا" },
@@ -65,7 +66,7 @@ export function SiteFooter() {
         <div>
           <h2 className="text-sm font-bold text-foreground">روابط سريعة</h2>
           <div className="mt-4 grid gap-3 text-sm text-muted-foreground">
-            <Link to="/services" className="footer-link">الخدمات</Link><Link to="/projects" className="footer-link">المشاريع</Link><Link to="/about" className="footer-link">عن الشركة</Link>
+            <Link to="/solutions" className="footer-link">حلولنا</Link><Link to="/services" className="footer-link">الخدمات</Link><Link to="/projects" className="footer-link">المشاريع</Link><Link to="/about" className="footer-link">عن الشركة</Link>
           </div>
         </div>
         <div>

@@ -256,3 +256,20 @@ body{overflow-x:clip}
 @keyframes sectorZoom{from{transform:scale(1.12)}to{transform:scale(1)}}
 @keyframes typingDot{0%,100%{opacity:.3;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
 @media(prefers-reduced-motion:reduce){.sector-panel,.sector-media img,.bubble,.typing i{animation:none}}
+
+.dialect-strip{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
+.dialect-strip span{padding:.55rem 1rem;border-radius:999px;border:1px solid color-mix(in oklab,var(--primary) 40%,transparent);background:color-mix(in oklab,var(--primary) 10%,transparent);font-size:.88rem;color:var(--foreground);transition:transform .3s,background .3s}
+.dialect-strip span:hover{transform:translateY(-3px);background:color-mix(in oklab,var(--primary) 22%,transparent)}
+.voice-wave{display:flex;align-items:center;gap:4px;height:44px;margin-top:1.5rem}
+.voice-wave i{width:4px;height:100%;border-radius:4px;background:linear-gradient(var(--primary),var(--secondary));animation:wave 1.1s ease-in-out infinite;transform-origin:center}
+@keyframes wave{0%,100%{transform:scaleY(.2)}50%{transform:scaleY(1)}}
+.solution-card{border:1px solid var(--border);border-radius:1rem;overflow:hidden;background:var(--card);transition:transform .35s,border-color .35s,box-shadow .35s}
+.solution-card:hover{transform:translateY(-6px);border-color:color-mix(in oklab,var(--primary) 60%,transparent);box-shadow:0 20px 50px -20px color-mix(in oklab,var(--primary) 45%,transparent)}
+.solution-card img{width:100%;height:200px;object-fit:cover;transition:transform .6s}
+.solution-card:hover img{transform:scale(1.06)}
+.solution-card .sc-body{padding:1.4rem}
+.solution-card h3{font-size:1.25rem;font-weight:700}
+.solution-card p{margin-top:.5rem;color:var(--muted-foreground);font-size:.95rem;line-height:1.8}
+.solution-card li{display:flex;gap:.5rem;align-items:center;margin-top:.5rem;font-size:.9rem}
+.solution-card li svg{width:16px;color:var(--primary);flex-shrink:0}
+@media (prefers-reduced-motion:reduce){.voice-wave i{animation:none}}
