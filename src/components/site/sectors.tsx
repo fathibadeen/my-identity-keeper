@@ -21,7 +21,7 @@ export function SectorsSection() {
     const a = setTimeout(() => setStep(1), 500), b = setTimeout(() => setStep(2), 1700);
     return () => { clearTimeout(a); clearTimeout(b); };
   }, [active]);
-  const s = sectors[active];
+  const s = sectors[active] ?? sectors[0]!;
 
   return <section className="section-block sectors-section">
     <div className="site-container">
