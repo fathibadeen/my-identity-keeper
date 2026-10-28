@@ -6,6 +6,7 @@ import { SiteLayout } from "@/components/site/site-shell";
 import { projectImages } from "@/components/site/project-images";
 import { brandAssets, partners } from "@/components/site/brand-assets";
 import { Marquee, SplitWords } from "@/components/site/motion";
+import { SectorsSection } from "@/components/site/sectors";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -60,6 +61,8 @@ function HomePage() {
     </section>
 
     <Marquee items={["مواقع","أنظمة","ذكاء اصطناعي","أتمتة","صوتي","استشارتك"]} />
+
+    <SectorsSection />
 
     <section className="partners-section section-block">
       <div className="site-container grid gap-10 lg:grid-cols-[.75fr_1.25fr] lg:items-end"><div><span className="eyebrow">شركاء مسور</span><h2 className="section-title">منظومة واحدة.<br /><span>خبرات تكمل بعضها.</span></h2></div><p className="section-lead">نجمع الاستشارة الذكية، الحلول الصوتية، والتنفيذ التقني تحت رؤية واحدة؛ لتنتقل شركتك من سؤال «ماذا نحتاج؟» إلى حل يعمل فعلًا.</p></div>

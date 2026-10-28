@@ -220,3 +220,39 @@ main{animation:page-in .6s cubic-bezier(.2,.7,.2,1)}
 @keyframes page-in{from{opacity:0;transform:translateY(12px)}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.word{opacity:1;transform:none}.hero-trust>div::after{transform:scaleX(1)}.cursor-glow{display:none}}
 body{overflow-x:clip}
+
+/* Sectors */
+.sector-stats{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem}
+.sector-stats div{padding:.9rem 1.3rem;border:1px solid var(--border);border-radius:.75rem;background:var(--surface-glass)}
+.sector-stats strong{display:block;font-size:1.6rem;color:var(--primary)}
+.sector-stats span{font-size:.85rem;color:var(--muted-foreground)}
+.sector-tabs{display:flex;gap:.6rem;overflow-x:auto;margin-top:2.2rem;padding-bottom:.4rem}
+.sector-tab{display:flex;align-items:center;gap:.5rem;white-space:nowrap;padding:.75rem 1.1rem;border:1px solid var(--border);border-radius:999px;background:var(--card);color:var(--foreground);font-weight:600;transition:all .3s}
+.sector-tab svg{width:18px;height:18px;color:var(--primary)}
+.sector-tab:hover{border-color:var(--primary);transform:translateY(-2px)}
+.sector-tab[aria-selected=true]{background:var(--primary);color:var(--primary-foreground)}
+.sector-tab[aria-selected=true] svg{color:var(--primary-foreground)}
+.sector-panel{display:grid;gap:2rem;margin-top:1.6rem;padding:1.4rem;border:1px solid var(--border);border-radius:1.2rem;background:var(--card);animation:sectorIn .6s cubic-bezier(.2,.8,.2,1)}
+@media(min-width:1024px){.sector-panel{grid-template-columns:1fr 1fr;padding:2rem}}
+.sector-media{position:relative;overflow:hidden;border-radius:.9rem;min-height:280px}
+.sector-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:sectorZoom 8s ease-out forwards}
+.sector-badge{position:absolute;top:1rem;right:1rem;padding:.35rem .9rem;border-radius:999px;background:var(--primary);color:var(--primary-foreground);font-size:.8rem;font-weight:700}
+.sector-body h3{font-size:1.6rem;font-weight:700}
+.sector-body>p{margin-top:.5rem;color:var(--muted-foreground)}
+.sector-chat{margin-top:1.2rem;padding:1rem;border:1px solid var(--border);border-radius:.9rem;background:var(--surface-deep);display:flex;flex-direction:column;gap:.6rem;min-height:170px}
+.sector-chat-head{display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted-foreground)}
+.sector-chat-head span{display:flex;align-items:center;gap:.35rem}
+.sector-chat-head svg{width:14px;height:14px}
+.bubble{max-width:85%;padding:.6rem .9rem;border-radius:1rem;font-size:.92rem;animation:sectorIn .4s ease}
+.bubble-in{align-self:flex-start;background:var(--muted)}
+.bubble-out{align-self:flex-end;background:color-mix(in oklab,var(--primary) 25%,var(--card))}
+.typing{display:flex;gap:4px}
+.typing i{width:6px;height:6px;border-radius:50%;background:var(--primary);animation:typingDot 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+.sector-body ul{margin:1.2rem 0;display:grid;gap:.6rem}
+.sector-body li{display:flex;gap:.5rem;align-items:center}
+.sector-body li svg{width:16px;height:16px;color:var(--primary);flex:none}
+@keyframes sectorIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes sectorZoom{from{transform:scale(1.12)}to{transform:scale(1)}}
+@keyframes typingDot{0%,100%{opacity:.3;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
+@media(prefers-reduced-motion:reduce){.sector-panel,.sector-media img,.bubble,.typing i{animation:none}}
