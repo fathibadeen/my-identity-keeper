@@ -1,12 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowUpLeft, Bot, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { projects, services } from "@/components/site/content";
 import { SiteLayout } from "@/components/site/site-shell";
-import { projectImages } from "@/components/site/project-images";
 import { brandAssets, partners } from "@/components/site/brand-assets";
 import { Marquee, SplitWords } from "@/components/site/motion";
-import { SectorsSection } from "@/components/site/sectors";
+import { HomeTabs, StatsStrip } from "@/components/site/home-tabs";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,7 +36,7 @@ export const Route = createFileRoute("/")({
 
 function HeroVisual() {
   return <div className="hero-showcase" aria-label="مسور المتطورة">
-    <div className="hero-brand-stage"><span className="hero-orbit" /><img src={brandAssets.logo} alt="شعار مسور" /><div className="hero-signal"><span>نكتشف</span><span>نبني</span><span>نُطلق</span></div></div>
+    <div className="hero-brand-stage"><span className="hero-orbit" /><img src={brandAssets.logo} alt="شعار مسور" /><div className="hero-signal"><span>وكيل صوتي بلهجة سعودية</span><span>أتمتة واتساب</span><span>مواقع وأنظمة ذكية</span></div></div>
   </div>;
 }
 
@@ -62,8 +60,6 @@ function HomePage() {
 
     <Marquee items={["مواقع","أنظمة","ذكاء اصطناعي","أتمتة","صوتي","استشارتك"]} />
 
-    <SectorsSection />
-
     <section className="partners-section section-block">
       <div className="site-container grid gap-10 lg:grid-cols-[.75fr_1.25fr] lg:items-end"><div><span className="eyebrow">شركاء مسور</span><h2 className="section-title">منظومة واحدة.<br /><span>خبرات تكمل بعضها.</span></h2></div><p className="section-lead">نجمع الاستشارة الذكية، الحلول الصوتية، والتنفيذ التقني تحت رؤية واحدة؛ لتنتقل شركتك من سؤال «ماذا نحتاج؟» إلى حل يعمل فعلًا.</p></div>
       <div className="site-container partners-grid mt-12">
@@ -71,23 +67,9 @@ function HomePage() {
       </div>
     </section>
 
-    <section className="section-block border-y border-border bg-surface-deep">
-      <div className="site-container grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
-        <div><span className="eyebrow">كيف نصنع الأثر</span><h2 className="section-title">من تحدٍ واضح،<br /><span>إلى ميزة تنافسية.</span></h2></div>
-        <p className="section-lead">لا نبدأ بالأداة. نبدأ بالنتيجة التي تريدها، ثم نختار التقنية ونبني المسار الذي يوصلك إليها بأقل تعقيد وأعلى قيمة.</p>
-      </div>
-      <div className="site-container mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
-        {services.slice(0, 6).map(({ icon: Icon, title, description }, index) => <article className="service-tile" key={title}><span className="service-index">0{index + 1}</span><Icon className="service-icon" /><h3>{title}</h3><p>{description}</p></article>)}
-      </div>
-      <div className="site-container mt-8 flex justify-end"><Button asChild variant="glass"><Link to="/services">عرض جميع الخدمات <ArrowLeft /></Link></Button></div>
-    </section>
+    <StatsStrip />
 
-    <section className="section-block">
-      <div className="site-container flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><span className="eyebrow">منتجات صنعتها مسور</span><h2 className="section-title">مشاريع تتحول من<br /><span>فكرة إلى أثر.</span></h2></div><Button asChild variant="glass"><Link to="/projects">كل المشاريع <ArrowUpLeft /></Link></Button></div>
-      <div className="site-container mt-12 grid gap-5 lg:grid-cols-2">
-        {projects.slice(0, 4).map(({ title, category, description, icon: Icon, number, accent, url }) => <article key={title} className={`project-card project-${accent} ${projectImages[title] ? "project-card-image" : ""}`}>{projectImages[title] && <img src={projectImages[title]} alt={`واجهة مشروع ${title}`} />}<div className="project-overlay" /><div className="relative z-10 flex items-center justify-between"><span className="project-number">{number}</span><span className="project-icon"><Icon /></span></div><div className="project-card-copy"><span className="project-category">{category}</span><h3>{title}</h3><p>{description}</p></div>{url ? <a href={url} target="_blank" rel="noreferrer" className="project-link" aria-label={`زيارة مشروع ${title}`}><ArrowUpLeft /></a> : <Link to="/projects" className="project-link" aria-label={`تفاصيل مشروع ${title}`}><ArrowUpLeft /></Link>}</article>)}
-      </div>
-    </section>
+    <HomeTabs />
 
     <section className="section-block bg-accent-soft">
       <div className="site-container grid gap-12 lg:grid-cols-2 lg:items-center"><div className="ai-panel"><div className="ai-grid" /><span className="ai-chip"><Bot /> ذكاء اصطناعي عربي</span><div className="ai-wave">{Array.from({ length: 12 }, (_, i)=><span key={i} />)}</div><div className="ai-message">مرحبًا، كيف أستطيع مساعدتك اليوم؟</div></div><div><span className="eyebrow">ذكاء ينجز أكثر</span><h2 className="section-title">حلول ذكية تفهم<br /><span>أعمالك وعملاءك.</span></h2><p className="section-lead mt-6">نوظف الذكاء الاصطناعي في خدمة أهداف واضحة: استجابة أسرع، عمليات أكثر كفاءة، وقرارات مبنية على بيانات أفضل.</p><ul className="mt-7 grid gap-3 text-sm text-foreground"><li><CheckCircle2 /> وكلاء صوتيون ومساعدون أذكياء</li><li><CheckCircle2 /> أتمتة الردود والعمليات المتكررة</li><li><CheckCircle2 /> حلول عربية تلائم السوق المحلي</li></ul></div></div>
