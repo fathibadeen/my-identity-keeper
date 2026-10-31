@@ -1,4 +1,4 @@
-import meswarLogoDark from "@/assets/brand/meswar-logo-dark.png.asset.json";
+import meswarLogoDark from "@/assets/brand/meswar-logo-2026.png.asset.json";
 import aiConsulting from "@/assets/partners/ai-consulting.png.asset.json";
 import sawtiAi from "@/assets/partners/sawti-ai.png.asset.json";
 

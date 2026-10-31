@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { ArrowLeft, Menu, Phone, X } from "lucide-react";
+import { ArrowLeft, Menu, MessageCircle, Phone, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { brandAssets } from "@/components/site/brand-assets";
@@ -81,7 +81,7 @@ export function SiteFooter() {
 }
 
 export function SiteLayout({ children }: { children: ReactNode }) {
-  return <div dir="rtl" className="min-h-screen bg-background text-foreground"><a href="#main-content" className="skip-link">انتقل إلى المحتوى الرئيسي</a><MotionEffects /><SiteHeader /><main id="main-content" tabIndex={-1}>{children}</main><SiteFooter /></div>;
+  return <div dir="rtl" className="min-h-screen bg-background text-foreground"><a href="#main-content" className="skip-link">انتقل إلى المحتوى الرئيسي</a><MotionEffects /><SiteHeader /><main id="main-content" tabIndex={-1}>{children}</main><SiteFooter /><a href="https://wa.me/966530044027" target="_blank" rel="noreferrer" className="wa-float" aria-label="تواصل عبر واتساب"><MessageCircle /></a></div>;
 }
 
 export function PageIntro({ eyebrow, title, description }: { eyebrow: string; title: string; description: string }) {
