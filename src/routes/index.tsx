@@ -47,7 +47,7 @@ function HomePage() {
         <div className="relative z-10 animate-rise">
           <span className="eyebrow"><span className="status-dot" /> من الفكرة إلى منتج يعمل وينمو</span>
           <h1 className="hero-title">مسور المتطورة<br /><span><SplitWords text="نبني التحوّل، لا الواجهة فقط." /></span></h1>
-          <p className="hero-copy">نفهم تحدي عملك، نكتشف الفرصة، ثم نصمم ونطور منتجًا رقميًا أو حل ذكاء اصطناعي يرفع الكفاءة ويمنح عملاءك تجربة تستحق العودة.</p>
+          <p className="hero-copy">نفهم تحديك، ونبني حلًا رقميًا ذكيًا يرفع كفاءة عملك.</p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Button asChild size="lg" variant="premium"><Link to="/projects">استكشف مشاريعنا <ArrowLeft /></Link></Button>
             <Button asChild size="lg" variant="glass"><Link to="/contact">تواصل معنا</Link></Button>
@@ -60,16 +60,16 @@ function HomePage() {
 
     <Marquee items={["مواقع","أنظمة","ذكاء اصطناعي","أتمتة","صوتي","استشارتك"]} />
 
+    <HomeTabs />
+
+    <StatsStrip />
+
     <section className="partners-section section-block">
       <div className="site-container grid gap-10 lg:grid-cols-[.75fr_1.25fr] lg:items-end"><div><span className="eyebrow">شركاء مسور</span><h2 className="section-title">منظومة واحدة.<br /><span>خبرات تكمل بعضها.</span></h2></div><p className="section-lead">نجمع الاستشارة الذكية، الحلول الصوتية، والتنفيذ التقني تحت رؤية واحدة؛ لتنتقل شركتك من سؤال «ماذا نحتاج؟» إلى حل يعمل فعلًا.</p></div>
       <div className="site-container partners-grid mt-12">
         {partners.map((partner, index) => <article className={`partner-card partner-card-${index + 1}`} key={partner.name}><div className="partner-visual"><img src={partner.image} alt={`شعار ${partner.name}`} /></div><div className="partner-content"><span>0{index + 1} / منظومة مسور</span><h3>{partner.name}</h3><p>{partner.description}</p>{partner.href.startsWith("http") ? <a className="partner-link" href={partner.href} target="_blank" rel="noreferrer">{partner.action}<ArrowUpLeft /></a> : <Link className="partner-link" to="/about">{partner.action}<ArrowLeft /></Link>}</div></article>)}
       </div>
     </section>
-
-    <StatsStrip />
-
-    <HomeTabs />
 
     <section className="section-block bg-accent-soft">
       <div className="site-container grid gap-12 lg:grid-cols-2 lg:items-center"><div className="ai-panel"><div className="ai-grid" /><span className="ai-chip"><Bot /> ذكاء اصطناعي عربي</span><div className="ai-wave">{Array.from({ length: 12 }, (_, i)=><span key={i} />)}</div><div className="ai-message">مرحبًا، كيف أستطيع مساعدتك اليوم؟</div></div><div><span className="eyebrow">ذكاء ينجز أكثر</span><h2 className="section-title">حلول ذكية تفهم<br /><span>أعمالك وعملاءك.</span></h2><p className="section-lead mt-6">نوظف الذكاء الاصطناعي في خدمة أهداف واضحة: استجابة أسرع، عمليات أكثر كفاءة، وقرارات مبنية على بيانات أفضل.</p><ul className="mt-7 grid gap-3 text-sm text-foreground"><li><CheckCircle2 /> وكلاء صوتيون ومساعدون أذكياء</li><li><CheckCircle2 /> أتمتة الردود والعمليات المتكررة</li><li><CheckCircle2 /> حلول عربية تلائم السوق المحلي</li></ul></div></div>

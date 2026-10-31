@@ -277,7 +277,8 @@ body{overflow-x:clip}
 .marquee i{color:color-mix(in oklab,var(--primary) 55%,transparent)}
 .brand-link img{object-fit:contain}
 .home-tabs-bar{position:relative;display:inline-flex;gap:.25rem;padding:.35rem;border:1px solid var(--border);border-radius:999px;background:var(--surface-glass)}
-.home-tab{position:relative;z-index:1;padding:.7rem 1.6rem;border-radius:999px;font-weight:700;color:var(--muted-foreground);transition:color .3s}
+.home-tab{position:relative;z-index:1;padding:1rem 2.4rem;border-radius:999px;font-size:1.15rem;font-weight:800;color:var(--muted-foreground);transition:color .3s}
+@media (max-width:767px){.home-tab{padding:.85rem 1.6rem;font-size:1.05rem}}
 .home-tab[aria-selected=true]{color:var(--primary-foreground)}
 .home-tab-pill{position:absolute;top:.35rem;bottom:.35rem;border-radius:999px;background:linear-gradient(120deg,var(--primary),oklch(0.72 0.17 175));transition:all .45s cubic-bezier(.2,.8,.2,1)}
 .tab-item{animation:tabIn .55s both}
