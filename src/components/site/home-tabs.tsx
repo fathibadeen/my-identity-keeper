@@ -66,7 +66,7 @@ export function StatsStrip() {
   useEffect(() => {
     const el = ref.current; if (!el) return;
     const io = new IntersectionObserver(([e]) => {
-      if (!e.isIntersecting) return; io.disconnect();
+      if (!e?.isIntersecting) return; io.disconnect();
       const start = performance.now();
       const tick = (t: number) => { const p = Math.min((t - start) / 1400, 1); setVals(items.map((x) => Math.round(x.n * (1 - Math.pow(1 - p, 3))))); if (p < 1) requestAnimationFrame(tick); };
       requestAnimationFrame(tick);
