@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft, ArrowUpLeft } from "lucide-react";
+import { ArrowLeft, ArrowUpLeft, Check } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { projects, services } from "@/components/site/content";
@@ -33,9 +33,13 @@ export function HomeTabs() {
       </div>
 
       {active === "services" ? (
-        <div key="s" className="site-container mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-2 lg:grid-cols-4" role="tabpanel">
+        <div key="s" className="site-container mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3" role="tabpanel">
           {services.map(({ icon: Icon, title, description }, i) => (
-            <article className="service-tile tab-item" style={{ animationDelay: `${i * 70}ms` }} key={title}><span className="service-index">0{i + 1}</span><Icon className="service-icon" /><h3>{title}</h3><p>{description}</p></article>
+            <article className="service-card tab-item" style={{ animationDelay: `${i * 70}ms` }} key={title}>
+              <span className="service-index">0{i + 1}</span><Icon /><h3>{title}</h3><p>{description}</p>
+              <ul><li><Check />تحليل واضح للاحتياج</li><li><Check />تنفيذ قابل للتطوير</li><li><Check />جودة وتجربة متناسقة</li></ul>
+              <Button asChild variant="premium" className="service-cta"><Link to="/contact">تواصل معنا <ArrowLeft /></Link></Button>
+            </article>
           ))}
         </div>
       ) : (
