@@ -75,7 +75,7 @@ export function SiteFooter() {
           <p className="mt-3 text-xs text-muted-foreground">الرقم الوطني الموحد: <span dir="ltr">7050514673</span></p>
         </div>
       </div>
-      <div className="border-t border-border"><div className="site-container flex flex-col gap-2 py-5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between"><span>© 2026 مسور المتطورة. جميع الحقوق محفوظة.</span><span>صُنع في المملكة العربية السعودية</span></div></div>
+      <div className="border-t border-border"><div className="site-container flex flex-col gap-2 py-5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between"><span>© 2026 مسور المتطورة. جميع الحقوق محفوظة.</span><span className="flex gap-4"><Link to="/privacy" className="footer-link">سياسة الخصوصية</Link><Link to="/terms" className="footer-link">الشروط والأحكام</Link></span></div></div>
     </footer>
   );
 }
