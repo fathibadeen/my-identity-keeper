@@ -1,12 +1,10 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft, Check, ChevronLeft, Headphones, Layers3, MessageCircle, Package } from "lucide-react";
+import { ArrowLeft, Check, ChevronLeft, Layers3, Package } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { projects, services } from "@/components/site/content";
 
 const productList = [
-  { icon: Headphones, title: "الكول سنتر الذكي", description: "وكيل صوتي ذكي يرد على مكالمات عملائك بلهجة سعودية طبيعية على مدار الساعة.", url: "https://www.sawti-ai.com/" },
-  { icon: MessageCircle, title: "أتمتة واتساب للأعمال", description: "رد فوري على استفسارات العملاء والحجوزات والطلبات عبر واتساب.", url: "https://www.sawti-ai.com/" },
   ...projects.map((p) => ({ icon: p.icon, title: p.title, description: p.description, url: (p as { url?: string }).url })),
 ];
 
