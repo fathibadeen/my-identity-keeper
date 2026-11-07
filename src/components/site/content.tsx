@@ -1,4 +1,4 @@
-import { Headphones, MessageCircle, Bot, Code2, Gavel, Globe2, Layers3, Palette, Route, Sparkles, Workflow, Wrench } from "lucide-react";
+import { Headphones, Bot, Code2, Gavel, Globe2, Layers3, Palette, Route, Sparkles, Workflow, Wrench } from "lucide-react";
 
 export const services = [
   { icon: Headphones, title: "أتمتة الوكيل الصوتي وواتساب الأعمال", description: "تأسيس وتخصيص وكلاء ذكاء اصطناعي للرد الفوري على المكالمات الهاتفية بلهجة سعودية ورسائل الواتساب على مدار الساعة مع التحويل المباشر للفريق." },
