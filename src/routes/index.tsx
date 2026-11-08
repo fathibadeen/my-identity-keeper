@@ -49,7 +49,7 @@ function HomePage() {
           <h1 className="hero-title">مسور المتطورة<br /><span><SplitWords text="نبني التحوّل، لا الواجهة فقط." /></span></h1>
           <p className="hero-copy">نفهم تحديك، ونبني حلًا رقميًا ذكيًا يرفع كفاءة عملك.</p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <Button asChild size="lg" variant="premium"><Link to="/projects">استكشف مشاريعنا <ArrowLeft /></Link></Button>
+            <Button asChild size="lg" variant="premium"><Link to="/projects">استكشف منتجاتنا <ArrowLeft /></Link></Button>
             <Button asChild size="lg" variant="glass"><Link to="/contact">تواصل معنا</Link></Button>
           </div>
           <div className="hero-trust"><div><strong>نفهم</strong><span>العمل قبل التقنية</span></div><div><strong>نبني</strong><span>منتجًا قابلًا للنمو</span></div><div><strong>نطوّر</strong><span>الأثر بعد الإطلاق</span></div></div>

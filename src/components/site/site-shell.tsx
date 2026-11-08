@@ -10,7 +10,7 @@ const navItems = [
   { to: "/about", label: "عن مسور" },
   { to: "/solutions", label: "حلولنا" },
   { to: "/services", label: "خدماتنا" },
-  { to: "/projects", label: "مشاريعنا" },
+  { to: "/projects", label: "منتجاتنا" },
   { to: "/contact", label: "تواصل معنا" },
 ] as const;
 
